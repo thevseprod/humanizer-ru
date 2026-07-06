@@ -1,6 +1,13 @@
 ---
 name: humanizer-ru
+version: 1.0.0
 description: Rewrite text so it reads like a real person wrote it, not an AI. Auto-detects Russian vs English and applies the matching rule set. Use when the user asks to humanize text, remove the "AI smell", de-AI, or make AI output sound natural - especially for Russian.
+license: MIT
+compatibility: any-agent
+allowed-tools:
+  - Read
+  - Write
+  - Edit
 ---
 
 # Humanizer

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "humanizer-ru",
+  "description": "Make AI text sound like a human wrote it. Built for Russian (catches the long em dash, officialese, buzzword filler); ships an English rule set too.",
+  "version": "1.0.0",
+  "author": {
+    "name": "thevseproduction",
+    "url": "https://github.com/thevseprod"
+  },
+  "homepage": "https://github.com/thevseprod/humanizer-ru",
+  "repository": "https://github.com/thevseprod/humanizer-ru",
+  "license": "MIT",
+  "keywords": ["writing", "editing", "ai-detection", "humanize", "russian", "prose", "style"]
+}

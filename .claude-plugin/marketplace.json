@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace-manifest.json",
+  "name": "humanizer-ru",
+  "owner": {
+    "name": "thevseproduction",
+    "url": "https://github.com/thevseprod"
+  },
+  "description": "The humanizer-ru skill, installable as a Claude Code plugin.",
+  "plugins": [
+    {
+      "name": "humanizer-ru",
+      "source": "./",
+      "description": "Make AI text sound like a human wrote it. Built for Russian, works for English too.",
+      "license": "MIT",
+      "keywords": ["writing", "editing", "ai-detection", "humanize", "russian", "prose", "style"]
+    }
+  ]
+}
