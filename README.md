@@ -71,6 +71,11 @@ npx skills add thevseprod/humanizer-ru
 | [`humanizer.en.md`](humanizer.en.md) | Правила для **английского** текста |
 | `LICENSE` | MIT |
 
+### Версии
+
+- **1.1.0** - установка одной командой в любой агент, плагин для Claude Code, баннер и пример «до/после» в README.
+- **1.0.0** - первый выпуск: правила для русского и английского, скилл с автоопределением языка.
+
 ### Автор
 
 Пишу и показываю про VSЁ о нейросетях, ИИ-агентах и вайбкодинге – для облегчения
@@ -134,6 +139,11 @@ Then send the text you want to humanize. Done.
 
 **Optional voice calibration:** paste one or two samples of your own writing and the
 model matches your style. Your samples stay with you.
+
+### Versions
+
+- **1.1.0** - one-command install into any agent, Claude Code plugin, banner and a before/after example in the README.
+- **1.0.0** - first release: Russian and English rule sets, skill with language auto-detection.
 
 ### Author
 
