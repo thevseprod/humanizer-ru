@@ -19,6 +19,11 @@ name: humanizer-ru
 version: {version}
 description: {description}
 license: MIT
+compatibility: any-agent
+allowed-tools:
+  - Read
+  - Write
+  - Edit
 ---
 
 # Humanizer
