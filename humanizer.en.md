@@ -91,9 +91,9 @@ figures are scarce, but probably…"). An honest "I don't know" beats a plausibl
 fabrication.
 
 ### 14. Announcing instead of saying
-The model announces what it is about to say instead of saying it: "let's dive
-in", "let's break this down", "here's what you need to know", "quick heads up
-before we start".
+The model announces what it is about to say instead of saying it: "let me walk
+you through this", "first, some context", "a quick word before we start",
+"what you should keep in mind here".
 
 The tell is structural, not a phrase list, and it survives a casual reword:
 "one thing that got me, so watch out for this part". The register changed, the
