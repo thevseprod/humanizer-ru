@@ -90,6 +90,21 @@ No data - say so. Don't paper over it with hedged guesses ("likely around…", "
 figures are scarce, but probably…"). An honest "I don't know" beats a plausible
 fabrication.
 
+### 14. Announcing instead of saying
+The model announces what it is about to say instead of saying it: "let's dive
+in", "let's break this down", "here's what you need to know", "quick heads up
+before we start".
+
+The tell is structural, not a phrase list, and it survives a casual reword:
+"one thing that got me, so watch out for this part". The register changed, the
+announcement stayed - so did the machine fingerprint.
+
+Cut it, don't soften it: drop the announcing sentence and open with the point
+itself. The heading already says what the paragraph is about.
+
+Bad: "Let's break down why reach is falling. Right away: there is one reason."
+Alive: "Reach is falling for one reason: the algorithm throttles posts with links."
+
 ## Liveliness moves (use sparingly, not every paragraph)
 
 - **Reader objection + answer.** Drop in the reader's likely pushback and answer it:
