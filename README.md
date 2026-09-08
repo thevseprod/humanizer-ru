@@ -35,6 +35,16 @@ Claude Code, Cursor, Codex и другие агенты.
 
 Слева типичный AI-текст со всеми признаками машины, справа - та же мысль после humanizer-ru: без штампов, канцелярита и длинного тире, зато с позицией и живым ритмом.
 
+Если картинка не грузится, вот то же самое текстом:
+
+| Было (нейросеть) | Стало |
+|---|---|
+| В современном мире важно отметить, что данный инструмент играет ключевую роль — он не просто ускоряет работу, он трансформирует подход. | Инструмент экономит мне часа три в неделю. Не «трансформирует подход», просто убирает рутину. |
+| Стоит подчеркнуть, что подход имеет как преимущества, так и недостатки, всё зависит от ситуации. | Мне подход зашёл. Минус один: на длинных текстах он тупит. |
+| Разберём по пунктам, почему падают охваты. Забегая вперёд: причина одна. | Охваты падают из-за одной вещи: алгоритм режет посты со ссылками. |
+
+**Чем меряем.** Читателем, а не детектором. Проценты «AI detected» у разных сервисов разные и меняются каждый месяц, а подгонка под них ломает нормальный текст. Если человек читает и не спотыкается - задача выполнена.
+
 ### Быстрый старт
 
 **Установить одной командой в любой AI-агент** (Claude Code, Cursor, Codex, Windsurf и другие) - через кросс-агентный установщик [skills](https://github.com/vercel-labs/skills):
@@ -75,6 +85,7 @@ npx skills add thevseprod/humanizer-ru
 
 ### Версии
 
+- **1.4.0** - инструмент научился не портить хороший текст. Новый раздел «Что НЕ дефект»: повтор термина, длинное предложение, вводные слова автора и его сомнения - это живая речь, а не следы нейросети. Нет находок - текст возвращается без правок. Синоним больше не считается лечением: «важно отметить» → «стоит подчеркнуть» это тот же штамп. Добавлены жанр (в инструкции сухость это норма, для договоров правила не применяются), чистка технического мусора после копирования из чата и режим проверки без переписывания.
 - **1.3.0** - правила переставлены по силе: первым идёт то, что чаще всего выдаёт нейросеть в русском тексте. Новое требование к чистке: не терять утверждения - слова «первый», «единственный», «впервые» несут факт, а не пафос, и убирать их нельзя. Второй проход теперь проверяет и это.
 - **1.2.0** - скилл собран в один файл: скачал `SKILL.md` и положил куда угодно, соседние файлы больше не нужны. Новое правило: анонс вместо содержания («погнали», «разберём по пунктам»). Приём структурный, поэтому не лечится сменой тона на разговорный.
 - **1.1.0** - установка одной командой в любой агент, плагин для Claude Code, баннер и пример «до/после» в README.
@@ -118,6 +129,8 @@ still smells like an AI - and whether any fact went missing along the way.
 
 What got cut: "in today's fast-paced world", "game-changer", "unlocks unprecedented potential", the "it doesn't just X, it Y" cadence, the em dash. What got added: a stance and a normal rhythm.
 
+**What we measure by.** The reader, not a detector. "AI detected" percentages differ from service to service and change every month, and tuning a text to them breaks it. If a person reads it without stumbling, the job is done.
+
 ### Quick start
 
 **Install into any AI agent with one command** (Claude Code, Cursor, Codex, Windsurf and more) - via the cross-agent [skills](https://github.com/vercel-labs/skills) installer:
@@ -147,6 +160,7 @@ model matches your style. Your samples stay with you.
 
 ### Versions
 
+- **1.4.0** - the tool learned not to ruin good text. New section "What is NOT a defect": a repeated term, a long sentence, the author's asides and doubts are human writing, not machine tells. Nothing found - the text comes back untouched. A synonym no longer counts as a fix: "it's worth noting" → "it bears emphasis" is the same stock phrase. Added genre awareness (dryness is the norm in a spec; don't apply the rules to contracts), clean-up of technical debris left by copy-paste from a chat, and a check-only mode.
 - **1.3.0** - rules reordered by strength: the most common tells come first. New constraint: do not lose claims - words like "first", "only", "record" carry a fact, not hype, and must survive the cleanup. The second pass now checks for it.
 - **1.2.0** - the skill ships as a single file: download `SKILL.md`, drop it anywhere, no neighbouring files needed. New rule: announcing instead of saying ("let's dive in", "here's the thing"). It is structural, so switching to a casual tone does not remove it.
 - **1.1.0** - one-command install into any agent, Claude Code plugin, banner and a before/after example in the README.
