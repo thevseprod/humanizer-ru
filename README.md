@@ -7,7 +7,7 @@
 
 [🇷🇺 Русский](#-русский) · [🇬🇧 English](#-english)
 
-![License: MIT](https://img.shields.io/badge/License-MIT-green.svg) ![Stars](https://img.shields.io/github/stars/thevseprod/humanizer-ru?style=flat&color=yellow) ![Install](https://img.shields.io/badge/install-npx%20skills%20add-black) ![Works in](https://img.shields.io/badge/works%20in-any%20AI%20agent-blue)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE) [![Stars](https://img.shields.io/github/stars/thevseprod/humanizer-ru?style=flat&color=yellow)](https://github.com/thevseprod/humanizer-ru/stargazers) [![Version](https://img.shields.io/github/v/release/thevseprod/humanizer-ru?label=version&color=blue)](https://github.com/thevseprod/humanizer-ru/releases) [![Install](https://img.shields.io/badge/install-npx%20skills%20add-black)](#для-тех-кто-работает-в-ai-агентах)
 
 <a id="русский"></a>
 
@@ -40,7 +40,7 @@ Claude Code, Cursor, Codex и другие агенты.
 
 Слева типичный AI-текст со всеми признаками машины, справа - та же мысль после humanizer-ru: без штампов, канцелярита и длинного тире, зато с позицией и живым ритмом.
 
-Если картинка не грузится, вот то же самое текстом:
+Ещё примеры, уже текстом (пригодится, если картинка не грузится):
 
 | Было (нейросеть) | Стало |
 |---|---|
@@ -50,15 +50,26 @@ Claude Code, Cursor, Codex и другие агенты.
 
 **Чем меряем.** Читателем, а не детектором. Проценты «AI detected» у разных сервисов разные и меняются каждый месяц, а подгонка под них ломает нормальный текст. Если человек читает и не спотыкается - задача выполнена.
 
-### Быстрый старт
+### Как начать за минуту (ничего не устанавливая)
 
-**Установить одной командой в любой AI-агент** (Claude Code, Cursor, Codex, Windsurf и другие) - через кросс-агентный установщик [skills](https://github.com/vercel-labs/skills):
+Работает в ChatGPT, Claude, Gemini, DeepSeek - в любом чате.
+
+1. Открой [файл правил](https://raw.githubusercontent.com/thevseprod/humanizer-ru/main/humanizer.ru.md) - он откроется просто текстом.
+2. Выдели всё и скопируй.
+3. Вставь первым сообщением в нейросеть.
+4. Вторым сообщением кинь текст, который надо оживить.
+
+Всё. Ни программ, ни регистрации, ни терминала.
+
+### Для тех, кто работает в AI-агентах
+
+**Одной командой** в Claude Code, Cursor, Codex, Windsurf и другие - через кросс-агентный установщик [skills](https://github.com/vercel-labs/skills):
 
 ```
-npx skills add thevseprod/humanizer-ru
+npx skills add thevseprod/humanizer-ru -g
 ```
 
-Во все агенты сразу: `npx skills add thevseprod/humanizer-ru --agent '*'`. Обновить потом: `npx skills update humanizer-ru`.
+Флаг `-g` ставит скилл глобально, для всех проектов сразу. Без него он ляжет только в текущую папку. Во все агенты сразу: `npx skills add thevseprod/humanizer-ru -g --agent '*'`. Обновить потом: `npx skills update humanizer-ru`.
 
 **Claude Code, как плагин:**
 
@@ -67,16 +78,11 @@ npx skills add thevseprod/humanizer-ru
 /plugin install humanizer-ru@humanizer-ru
 ```
 
-**Без установки, любая нейросеть (ChatGPT / Claude / Gemini / …):**
+**Одним файлом куда угодно** - скачай [`SKILL.md`](https://raw.githubusercontent.com/thevseprod/humanizer-ru/main/SKILL.md) и положи в папку скиллов своего агента. Внутри уже оба набора правил, соседние файлы не нужны.
 
-- **Одним файлом куда угодно** - скачай [`SKILL.md`](SKILL.md) и положи его в папку скиллов своего агента. Внутри уже оба набора правил, ничего больше не нужно.
-- **Отдать файл агенту** - дай [`humanizer.ru.md`](humanizer.ru.md) своему AI (Cursor, кастомный GPT и т.п.), он сам прочитает правила.
-- **Скопировать в чат** - открой [`humanizer.ru.md`](humanizer.ru.md) и вставь часть от `ЗАДАЧА` до конца первым сообщением.
+После установки скилл срабатывает не сам по себе: попроси словами - «оживи этот текст», «убери запах ИИ» - и приложи текст.
 
-Потом кинь текст, который надо оживить. Готово.
-
-**Калибровка под себя (по желанию):** дай 1-2 примера своего текста, и модель
-подстроится под твою манеру. Твои примеры остаются у тебя.
+**Калибровка под себя (по желанию):** дай 5-10 своих текстов (хватит и трёх) - модель снимет с них твою манеру и будет держаться её при каждой правке. Твои примеры остаются у тебя.
 
 ### Что внутри
 
@@ -141,15 +147,26 @@ What got cut: "in today's fast-paced world", "game-changer", "unlocks unpreceden
 
 **What we measure by.** The reader, not a detector. "AI detected" percentages differ from service to service and change every month, and tuning a text to them breaks it. If a person reads it without stumbling, the job is done.
 
-### Quick start
+### Start in a minute (nothing to install)
 
-**Install into any AI agent with one command** (Claude Code, Cursor, Codex, Windsurf and more) - via the cross-agent [skills](https://github.com/vercel-labs/skills) installer:
+Works in ChatGPT, Claude, Gemini, DeepSeek - any chat.
+
+1. Open the [rules file](https://raw.githubusercontent.com/thevseprod/humanizer-ru/main/humanizer.en.md) - it opens as plain text.
+2. Select all and copy.
+3. Paste it as your first message to the model.
+4. Send the text you want humanized as the second message.
+
+That's it. No software, no signup, no terminal.
+
+### If you work inside AI agents
+
+**One command** for Claude Code, Cursor, Codex, Windsurf and others - via the cross-agent [skills](https://github.com/vercel-labs/skills) installer:
 
 ```
-npx skills add thevseprod/humanizer-ru
+npx skills add thevseprod/humanizer-ru -g
 ```
 
-Into every agent at once: `npx skills add thevseprod/humanizer-ru --agent '*'`. Update later: `npx skills update humanizer-ru`.
+`-g` installs the skill globally, for every project. Without it the skill lands in the current folder only. Into every agent at once: `npx skills add thevseprod/humanizer-ru -g --agent '*'`. Update later: `npx skills update humanizer-ru`.
 
 **Claude Code, as a plugin:**
 
@@ -158,15 +175,21 @@ Into every agent at once: `npx skills add thevseprod/humanizer-ru --agent '*'`. 
 /plugin install humanizer-ru@humanizer-ru
 ```
 
-**No install, any LLM (ChatGPT / Claude / Gemini / …):**
+**As a single file anywhere** - download [`SKILL.md`](https://raw.githubusercontent.com/thevseprod/humanizer-ru/main/SKILL.md) and drop it into your agent's skills folder. Both rule sets are already inside; no neighbouring files needed.
 
-- **Hand the file to your agent** - give [`humanizer.en.md`](humanizer.en.md) to your AI (Cursor, a custom GPT, etc.) and it reads the rules itself.
-- **Copy into the chat** - open [`humanizer.en.md`](humanizer.en.md) and paste the part from `TASK` to the end as your first message.
+Once installed, the skill doesn't fire on its own: ask for it in words - "humanize this", "strip the AI smell" - and attach the text.
 
-Then send the text you want to humanize. Done.
+**Optional voice calibration:** give the model 5-10 samples of your own writing (three will do) - it picks up your manner and holds to it on every edit. Your samples stay with you.
 
-**Optional voice calibration:** paste one or two samples of your own writing and the
-model matches your style. Your samples stay with you.
+### What's inside
+
+| File | What it is |
+|---|---|
+| [`SKILL.md`](SKILL.md) | The whole skill in one file - download it and drop it anywhere |
+| [`humanizer.ru.md`](humanizer.ru.md) | Rules for **Russian** text |
+| [`humanizer.en.md`](humanizer.en.md) | Rules for **English** text |
+| `build_single.py` | Rebuilds `SKILL.md` from the two rule files |
+| `LICENSE` | MIT |
 
 ### Versions
 
