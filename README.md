@@ -26,8 +26,8 @@ Claude Code, Cursor, Codex и другие агенты.
 Не просто меняет слова на синонимы. Он охотится за конкретными признаками машинного
 текста и переписывает их: привычку к длинному тире, штампы-затычки («важно отметить»),
 буллшит-лексикон, подобострастные концовки, безличный хедж без позиции, механическое
-«правило тройки», стены текста и прочее. Потом проходит вторым проходом: «что тут всё
-ещё пахнет ботом?».
+«правило тройки», стены текста и прочее. Потом проходит вторым проходом и проверяет
+две вещи: что ещё пахнет ботом - и не пропало ли по дороге что-то из фактов.
 
 ### Пример
 
@@ -75,6 +75,7 @@ npx skills add thevseprod/humanizer-ru
 
 ### Версии
 
+- **1.3.0** - правила переставлены по силе: первым идёт то, что чаще всего выдаёт нейросеть в русском тексте. Новое требование к чистке: не терять утверждения - слова «первый», «единственный», «впервые» несут факт, а не пафос, и убирать их нельзя. Второй проход теперь проверяет и это.
 - **1.2.0** - скилл собран в один файл: скачал `SKILL.md` и положил куда угодно, соседние файлы больше не нужны. Новое правило: анонс вместо содержания («погнали», «разберём по пунктам»). Приём структурный, поэтому не лечится сменой тона на разговорный.
 - **1.1.0** - установка одной командой в любой агент, плагин для Claude Code, баннер и пример «до/после» в README.
 - **1.0.0** - первый выпуск: правила для русского и английского, скилл с автоопределением языка.
@@ -106,7 +107,8 @@ with one command.
 It doesn't just swap synonyms. It hunts the specific patterns that mark machine
 writing and rewrites them: the em-dash habit, stock filler ("it's worth noting"),
 buzzword soup, servile closers, opinion-free hedging, the mechanical rule of three,
-walls of text, and more. Then it runs a second "what still smells like an AI?" pass.
+walls of text, and more. Then it runs a second pass that checks two things: what
+still smells like an AI - and whether any fact went missing along the way.
 
 ### Example
 
@@ -145,6 +147,8 @@ model matches your style. Your samples stay with you.
 
 ### Versions
 
+- **1.3.0** - rules reordered by strength: the most common tells come first. New constraint: do not lose claims - words like "first", "only", "record" carry a fact, not hype, and must survive the cleanup. The second pass now checks for it.
+- **1.2.0** - the skill ships as a single file: download `SKILL.md`, drop it anywhere, no neighbouring files needed. New rule: announcing instead of saying ("let's dive in", "here's the thing"). It is structural, so switching to a casual tone does not remove it.
 - **1.1.0** - one-command install into any agent, Claude Code plugin, banner and a before/after example in the README.
 - **1.0.0** - first release: Russian and English rule sets, skill with language auto-detection.
 

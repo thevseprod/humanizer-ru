@@ -62,7 +62,7 @@ def strip_intro(text: str, marker: str) -> str:
 
 
 def main() -> None:
-    version = "1.2.0"
+    version = "1.3.0"
     ru = strip_intro((ROOT / "humanizer.ru.md").read_text(encoding="utf-8"),
                      "## ЗАДАЧА")
     en = strip_intro((ROOT / "humanizer.en.md").read_text(encoding="utf-8"),
