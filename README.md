@@ -1,6 +1,6 @@
 # humanizer-ru
 
-![humanizer-ru - убираем «запах ИИ» из текста, заточен под русский](assets/banner.png)
+![humanizer-ru - убираем «запах ИИ» из текста, заточен под русский](assets/banner.webp)
 
 > Делает текст нейросети живым, как будто писал человек. Заточен под русский, есть и английская версия.
 > Makes AI text read like a human wrote it. Built for Russian, works for English too.
@@ -27,11 +27,16 @@ Claude Code, Cursor, Codex и другие агенты.
 текста и переписывает их: привычку к длинному тире, штампы-затычки («важно отметить»),
 буллшит-лексикон, подобострастные концовки, безличный хедж без позиции, механическое
 «правило тройки», стены текста и прочее. Потом проходит вторым проходом и проверяет
-две вещи: что ещё пахнет ботом - и не пропало ли по дороге что-то из фактов.
+три вещи: что ещё пахнет ботом, не пропало ли по дороге что-то из фактов и не
+превратился ли текст в обезличенный.
+
+И знает, чего трогать нельзя. Повтор термина, длинная фраза, вводные слова автора,
+его сомнения - это живая речь, а не следы нейросети. Если чистить нечего, текст
+возвращается без правок.
 
 ### Пример
 
-![До и после humanizer-ru - один смысл без «запаха нейросети»](assets/before-after.png)
+![До и после humanizer-ru - один смысл без «запаха нейросети»](assets/before-after.webp)
 
 Слева типичный AI-текст со всеми признаками машины, справа - та же мысль после humanizer-ru: без штампов, канцелярита и длинного тире, зато с позицией и живым ритмом.
 
@@ -118,8 +123,13 @@ with one command.
 It doesn't just swap synonyms. It hunts the specific patterns that mark machine
 writing and rewrites them: the em-dash habit, stock filler ("it's worth noting"),
 buzzword soup, servile closers, opinion-free hedging, the mechanical rule of three,
-walls of text, and more. Then it runs a second pass that checks two things: what
-still smells like an AI - and whether any fact went missing along the way.
+walls of text, and more. Then it runs a second pass that checks three things: what
+still smells like an AI, whether any fact went missing along the way, and whether
+the text lost the author's voice.
+
+It also knows what to leave alone. A repeated term, a long sentence, the author's
+asides and doubts are human writing, not machine tells. If there is nothing to
+clean, the text comes back untouched.
 
 ### Example
 
