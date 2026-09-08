@@ -96,6 +96,7 @@ npx skills add thevseprod/humanizer-ru -g
 
 ### Версии
 
+- **1.4.1** - проще начать: копипаст в чат теперь первый способ, ссылки ведут на текст файла, у команды установки появился флаг `-g`. Правила не менялись.
 - **1.4.0** - инструмент научился не портить хороший текст. Новый раздел «Что НЕ дефект»: повтор термина, длинное предложение, вводные слова автора и его сомнения - это живая речь, а не следы нейросети. Нет находок - текст возвращается без правок. Синоним больше не считается лечением: «важно отметить» → «стоит подчеркнуть» это тот же штамп. Добавлены жанр (в инструкции сухость это норма, для договоров правила не применяются), чистка технического мусора после копирования из чата и режим проверки без переписывания.
 - **1.3.0** - правила переставлены по силе: первым идёт то, что чаще всего выдаёт нейросеть в русском тексте. Новое требование к чистке: не терять утверждения - слова «первый», «единственный», «впервые» несут факт, а не пафос, и убирать их нельзя. Второй проход теперь проверяет и это.
 - **1.2.0** - скилл собран в один файл: скачал `SKILL.md` и положил куда угодно, соседние файлы больше не нужны. Новое правило: анонс вместо содержания («погнали», «разберём по пунктам»). Приём структурный, поэтому не лечится сменой тона на разговорный.
@@ -193,6 +194,7 @@ Once installed, the skill doesn't fire on its own: ask for it in words - "humani
 
 ### Versions
 
+- **1.4.1** - easier to start: copy-paste into a chat is now the first option, links point at the raw text, the install command got the `-g` flag. Rules unchanged.
 - **1.4.0** - the tool learned not to ruin good text. New section "What is NOT a defect": a repeated term, a long sentence, the author's asides and doubts are human writing, not machine tells. Nothing found - the text comes back untouched. A synonym no longer counts as a fix: "it's worth noting" → "it bears emphasis" is the same stock phrase. Added genre awareness (dryness is the norm in a spec; don't apply the rules to contracts), clean-up of technical debris left by copy-paste from a chat, and a check-only mode.
 - **1.3.0** - rules reordered by strength: the most common tells come first. New constraint: do not lose claims - words like "first", "only", "record" carry a fact, not hype, and must survive the cleanup. The second pass now checks for it.
 - **1.2.0** - the skill ships as a single file: download `SKILL.md`, drop it anywhere, no neighbouring files needed. New rule: announcing instead of saying ("let's dive in", "here's the thing"). It is structural, so switching to a casual tone does not remove it.
