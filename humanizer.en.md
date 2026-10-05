@@ -69,6 +69,40 @@ Work in two passes:
    way?" - and put it back; "does this still sound like the author, or like a
    scrubbed, faceless version of them?" - if the latter, give the voice back.
 
+   Compare the meaning against the original line by line, three things above all:
+   - **Qualifiers stay attached to their facts.** "May", "up to", "about",
+     "usually", "on average" set how precise a claim is. "May cut costs by up to
+     30%" stays that way; it does not become the promise "cuts costs by 30%".
+   - **No causes you invented.** If the original just put two facts side by side,
+     don't link them yourself: "an update shipped, complaints dropped" is not
+     "complaints dropped because of the update".
+   - **The numbers didn't drift.** Same units, same period, same comparison: "per
+     quarter" doesn't turn into "per year", "twice last year's figure" keeps "last
+     year's".
+
+If you can run a separate helper (a sub-agent), hand it the original and your
+result with no explanations of your own, and ask it to find what got lost,
+distorted, or still sounds machine-made. Fresh eyes catch what the editor walks
+past. No helper? Re-read the result as a stranger's post in a feed, as if you were
+seeing it for the first time.
+
+## Quick list: spot it, fix it
+
+Run through this first. Each item is covered in more detail below.
+
+| You see | What to do |
+|---|---|
+| "It's worth noting that…", "It's important to note…" | Drop the lead-in, state the point |
+| "In today's fast-paced world…", "In the ever-evolving landscape…" | Open with a fact from this text |
+| "plays a crucial role", "serves as a testament to" | Say what it actually does. Nothing to say - cut it |
+| "it's not just an app, it's a whole ecosystem" | Say plainly what it is and what it gives |
+| "unlock the potential", "take it to the next level", "game-changer" | Name the result from the text, or cut it |
+| "comprehensive solution", "holistic approach" | List what's in it. Nothing to list - cut it |
+| "from freelancers to holdings", "from beginners to pros" | Name who exactly, or cut it |
+| "In conclusion", "To sum up", "I hope this helps" | Cut it, end on the last real point |
+| "Sure! Here's a version:", "Want me to make another one?" | Cut it, hand over the text alone |
+| the em dash "—" | Hyphen, comma, colon, or rebuild the sentence |
+
 ## AI tells to remove
 
 ### 1. Punctuation & formatting
@@ -125,6 +159,11 @@ solution", "synergy".
 The worn-out AI cadence: "It's not just X, it's Y", "Not only… but also…". Say it
 straight: "It's Y".
 
+The exception: if both halves say different things, keep it. "We don't sell
+courses, we build a product" names two different businesses - leave it. Cut it
+when the first half is empty and there only for effect: "it's not just an app,
+it's a whole ecosystem".
+
 ### 6. Mechanical rule of three
 AI crams everything into triples for a sense of completeness: "fast, reliable, and
 easy". If there are really two or four points, write that many.
@@ -136,7 +175,11 @@ core", "The truth is", "What really matters is". Delete them and state the point
 ### 8. Servile or boilerplate endings
 No "I hope this helps!", "In conclusion", "To sum up", "Let me know if you have any
 questions". And no empty-optimism closers: "The future looks bright", "Only time will
-tell", "The possibilities are endless". End on something concrete or a sharp line.
+tell", "The possibilities are endless". End on something concrete.
+
+No slogan-moral on the last line either: "And that's the real lesson: never give
+up", "Remember: the hardest part is starting". If the piece needs a conclusion,
+make it specific to this story. If not, end on the last fact.
 
 ### 9. Symmetric hedging (no stance)
 "On one hand… on the other hand", "It depends", "There's no one-size-fits-all" - that's
@@ -159,17 +202,61 @@ about nothing", and restating the obvious, is a classic AI signal. Cut the fille
 - Vary sentence length: short - long - short reads alive.
 
 ### 13. A living voice, not faceless media
-- Write in the first person, with an opinion. Don't hide behind "experts say",
-  "studies suggest" - if you have a view, say "I think", "in my experience".
+- If the text carries the author's own view, let it speak plainly instead of
+  hiding behind "experts say", "specialists recommend". If it said "specialists
+  recommend backups" and the author does it themselves, write it in their voice.
+- Don't add opinions or experience the text doesn't have. "I tried it myself",
+  "in my experience", "honestly, I was shocked" dropped into someone else's news
+  is fabrication, not liveliness. First person and opinions appear only if the
+  author asked for "write it as me" or gave samples of their own writing.
 - Don't talk down to the reader and don't grovel. Talk as an equal.
 - An object cannot act on its own. "The data says", "the market rewards", "the
-  study underscores" - the living person who actually did something disappears
-  from the sentence. Put them back: "I looked at the numbers and saw".
+  study underscores" - whoever actually did something drops out of the sentence.
+  Put them back if the text names them: "the company's analysts counted". If it
+  doesn't, just state the fact: "sales grew 12%".
 
 ### 14. Don't invent in the gaps
 No data - say so. Don't paper over it with hedged guesses ("likely around…", "exact
 figures are scarce, but probably…"). An honest "I don't know" beats a plausible
 fabrication.
+
+### 15. Chopped fragments for mood
+"Silence. Coffee. Thoughts.", "Exactly. No fluff. Straight to it." - the model
+chops sentences to sound deep. If there's a thought behind the fragments, put it
+into a normal sentence. If there isn't, cut them.
+
+### 16. Asking and answering yourself
+"Why does this matter? Because time is money.", "The result? Twice the growth."
+One such question per piece is fine. When paragraphs are built on them, it's a
+machine move. Say it as a statement: "It saves time", "Growth doubled".
+
+### 17. Performed honesty and care
+"To be honest,", "Let's be real,", "I'll be straight with you" with nothing to
+confess - a lead-in to an ordinary point. Drop the lead-in. Same for "your
+feelings are valid", "it's okay to feel tired" in a text that isn't about
+feelings: cut them.
+
+### 18. Grammar that gives it away
+- **Dangling modifiers.** "Walking to the station, my hat blew off" - the hat
+  wasn't walking. Rebuild: "As I walked to the station, my hat blew off".
+- **Title Case Headings Everywhere** in places where people normally write
+  sentence case (posts, notes, emails). Match the setting.
+
+### 19. Seams after cleaning
+When you delete a sentence, check its neighbours. "As mentioned above", "this
+approach", "the second reason" must not point to something no longer in the text.
+And don't close three paragraphs in a row with the same caveat.
+
+### 20. Numbers and ranges
+- "From freelancers to holdings", "from beginners to pros" - decoration with no
+  real scale. Name who exactly, or cut it.
+- One number, one format. Not "1.5M", "1,500,000" and "one and a half million"
+  in the same text.
+
+### 21. Chat wrapping
+"Sure! Here's a version:", "Great question!" at the top, "Want me to make another
+one?", "Happy to tweak anything" at the bottom - those are a chatbot's
+lines, not part of the text. Hand over the text alone.
 
 ## What is NOT a defect
 
@@ -188,12 +275,19 @@ choppy. None of this counts as an AI tell - leave it alone:
 - **Quotes and names.** You don't rewrite those, even with a banned phrase inside.
 - **An odd, specific detail.** A model rounds those off; a person keeps them. Keep it.
 - **Doubt and "I still haven't decided".** Machines don't waver, people do.
+- **A single rhetorical question.** People ask them as often as models do. The
+  tell is a whole text built on them (rule 16).
 
 And check yourself at the end: if the edit removed the personal examples, the
 author's stance and the specifics, and the text became nobody's - you didn't
 humanize it, you erased them. Roll back.
 
-## Liveliness moves (use sparingly, not every paragraph)
+## Liveliness moves (only on request)
+
+Use them only if the author asked to "make it livelier", to "write it as me", or
+gave samples of their own writing. Otherwise leave them out: in someone else's
+text they turn into rhetoric the author never had. And even then, sparingly, not
+in every paragraph.
 
 - **Reader objection + answer.** Drop in the reader's likely pushback and answer it:
   "You'll say: sounds complicated. It isn't, because…". Vary the form; don't repeat the
