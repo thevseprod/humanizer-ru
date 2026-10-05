@@ -1,6 +1,6 @@
 ---
 name: humanizer-ru
-version: 1.5.0
+version: 1.5.1
 description: Rewrite text so it reads like a real person wrote it, not an AI. Auto-detects Russian vs English and applies the matching rule set. Use when the user asks to humanize text, remove the "AI smell", de-AI, or make AI output sound natural - especially for Russian. Russian requests count too - очеловечь, перепиши как человек, оживи текст, убери запах ИИ, сделай живее, звучит как робот, убери канцелярит. While installed, also keep your own Russian and English writing free of the quick-list stock phrases, silently; never edit the user's text unless asked.
 license: MIT
 compatibility: any-agent
@@ -121,7 +121,7 @@ allowed-tools:
 | «В современном мире…», «В эпоху цифровизации…» | Начни с факта из этого текста |
 | «играет ключевую роль» | Скажи, что именно делает. Нечего сказать - убери |
 | «данный инструмент», «данная функция» | «этот инструмент», «эта функция» |
-| «Это не просто приложение, это целая экосистема» | Скажи прямо, что это и что даёт |
+| «Это не просто приложение, это целая экосистема» | Скажи прямо, что это, по фактам из текста. Фактов нет - убери |
 | «выйти на новый уровень», «безграничные возможности», «раскрыть свой потенциал» | Назови результат из текста или убери |
 | «уникальное решение», «комплексный подход» | Перечисли, что входит. Нечего перечислить - убери |
 | «от фрилансеров до холдингов», «от новичков до профи» | Назови, кому конкретно, или убери |
@@ -149,8 +149,8 @@ allowed-tools:
 - «в современном мире», «в эпоху цифровизации», «в рамках данной статьи»
 - «является важным аспектом», «играет ключевую роль»
 
-Плохо: «Важно отметить, что данный инструмент играет ключевую роль…»
-Живо: «Эта штука реально решает вот что:»
+Плохо: «Важно отметить, что данный инструмент собирает отчёт за 10 минут.»
+Живо: «Инструмент собирает отчёт за 10 минут.»
 
 Сюда же два дефекта, которые видно не по словам, а по грамматике:
 
@@ -177,8 +177,10 @@ allowed-tools:
 подряд: получилось готовое оглавление - текст собран из анонсов, начинай абзацы
 с самой мысли.
 
-Плохо: «Разберём, почему падают охваты. Сразу скажу: причина одна.»
-Живо: «Охваты падают из-за одной вещи: алгоритм режет посты со ссылками.»
+Плохо: «Разберём, почему падают охваты. Сразу скажу: причина одна. Алгоритм стал
+реже показывать посты со ссылками.»
+Живо: «Охваты падают по одной причине: алгоритм стал реже показывать посты со
+ссылками.»
 
 ### 4. Буллшит-лексикон
 Слова-пустышки из маркетингового буллшита - под нож: «прорыв», «трансформация»,
@@ -214,7 +216,11 @@ allowed-tools:
 
 ### 9. Симметричный хедж (отсутствие позиции)
 «С одной стороны… с другой стороны», «у каждого свой подход», «всё зависит от
-ситуации» - так пишет ИИ, у которого нет мнения. Займи сторону и скажи прямо.
+ситуации» - так пишет ИИ, у которого нет мнения. Если позиция в тексте есть -
+автор её где-то высказал - скажи её прямо. Если нет, не придумывай: убери пустую
+симметрию и оставь сами факты. Было «У подхода есть плюсы и минусы: он быстрый,
+но на длинных текстах может сбоить» - стало «Подход быстрый, но на длинных
+текстах может сбоить».
 (Перечисление «во-первых… во-вторых…» - это нормально, оставляй.)
 Порог для смягчений: три и больше в одной фразе - дефект. Одно-два - нормальная
 человеческая осторожность, не трогай.
@@ -245,7 +251,8 @@ allowed-tools:
 - Предмет не может действовать сам. «Данные говорят», «рынок вознаграждает»,
   «исследование подчёркивает» - из фразы пропадает тот, кто на самом деле что-то
   сделал. Верни его, если он есть в тексте: «аналитики компании посчитали». Если
-  нет - просто назови факт: «продажи выросли на 12%».
+  нет - просто назови факт: было «данные говорят, что продажи выросли на 12%» -
+  стало «продажи выросли на 12%».
 
 ### 14. Не выдумывай в пробелах
 Нет данных - так и скажи. Не лепи догадки-затычки с хеджем («вероятно, около…»,
@@ -258,7 +265,7 @@ allowed-tools:
 предложение. Если мысли нет - убери.
 
 ### 16. Сам спросил - сам ответил
-«Зачем это нужно? Потому что время дорого.», «Результат? Рост в два раза.»
+«Зачем это нужно? Чтобы экономить время.», «Результат? Рост в два раза.»
 Один такой вопрос на текст - нормально. Когда на них построены абзацы, это
 приём машины. Скажи утверждением: «Это экономит время», «Рост в два раза».
 
@@ -433,7 +440,7 @@ Run through this first. Each item is covered in more detail below.
 | "It's worth noting that…", "It's important to note…" | Drop the lead-in, state the point |
 | "In today's fast-paced world…", "In the ever-evolving landscape…" | Open with a fact from this text |
 | "plays a crucial role", "serves as a testament to" | Say what it actually does. Nothing to say - cut it |
-| "it's not just an app, it's a whole ecosystem" | Say plainly what it is and what it gives |
+| "it's not just an app, it's a whole ecosystem" | Say plainly what it is, from the facts in the text. No facts - cut it |
 | "unlock the potential", "take it to the next level", "game-changer" | Name the result from the text, or cut it |
 | "comprehensive solution", "holistic approach" | List what's in it. Nothing to list - cut it |
 | "from freelancers to holdings", "from beginners to pros" | Name who exactly, or cut it |
@@ -485,8 +492,10 @@ sentence of each paragraph and read them in a row: if that reads as a ready-made
 table of contents, the text is built out of announcements. Open each paragraph
 with the point itself.
 
-Bad: "Let's break down why reach is falling. Right away: there is one reason."
-Alive: "Reach is falling for one reason: the algorithm throttles posts with links."
+Bad: "Let's break down why reach is falling. Right away: there is one reason. The
+algorithm now shows posts with links less often."
+Alive: "Reach is falling for one reason: the algorithm now shows posts with links
+less often."
 
 ### 4. Buzzword soup
 Drop the empty hype vocabulary: "delve", "tapestry", "realm", "leverage" (as filler),
@@ -521,7 +530,11 @@ make it specific to this story. If not, end on the last fact.
 
 ### 9. Symmetric hedging (no stance)
 "On one hand… on the other hand", "It depends", "There's no one-size-fits-all" - that's
-an AI with no opinion. Take a side and say it. (A plain "first… second…" list is fine.)
+an AI with no opinion. If the text has a stance - the author states it somewhere -
+say it plainly. If it doesn't, don't make one up: drop the empty balancing and keep
+the facts. "The approach has pros and cons: it's fast, but it can stumble on long
+texts" becomes "The approach is fast, but it can stumble on long texts".
+(A plain "first… second…" list is fine.)
 A threshold for hedges: three or more in one sentence is a defect. One or two is
 ordinary human caution - leave it.
 
@@ -551,7 +564,8 @@ about nothing", and restating the obvious, is a classic AI signal. Cut the fille
 - An object cannot act on its own. "The data says", "the market rewards", "the
   study underscores" - whoever actually did something drops out of the sentence.
   Put them back if the text names them: "the company's analysts counted". If it
-  doesn't, just state the fact: "sales grew 12%".
+  doesn't, just state the fact: "the data says sales grew 12%" becomes "sales
+  grew 12%".
 
 ### 14. Don't invent in the gaps
 No data - say so. Don't paper over it with hedged guesses ("likely around…", "exact
@@ -564,7 +578,7 @@ chops sentences to sound deep. If there's a thought behind the fragments, put it
 into a normal sentence. If there isn't, cut them.
 
 ### 16. Asking and answering yourself
-"Why does this matter? Because time is money.", "The result? Twice the growth."
+"Why does this matter? To save time.", "The result? Twice the growth."
 One such question per piece is fine. When paragraphs are built on them, it's a
 machine move. Say it as a statement: "It saves time", "Growth doubled".
 

@@ -95,7 +95,7 @@ Run through this first. Each item is covered in more detail below.
 | "It's worth noting that…", "It's important to note…" | Drop the lead-in, state the point |
 | "In today's fast-paced world…", "In the ever-evolving landscape…" | Open with a fact from this text |
 | "plays a crucial role", "serves as a testament to" | Say what it actually does. Nothing to say - cut it |
-| "it's not just an app, it's a whole ecosystem" | Say plainly what it is and what it gives |
+| "it's not just an app, it's a whole ecosystem" | Say plainly what it is, from the facts in the text. No facts - cut it |
 | "unlock the potential", "take it to the next level", "game-changer" | Name the result from the text, or cut it |
 | "comprehensive solution", "holistic approach" | List what's in it. Nothing to list - cut it |
 | "from freelancers to holdings", "from beginners to pros" | Name who exactly, or cut it |
@@ -147,8 +147,10 @@ sentence of each paragraph and read them in a row: if that reads as a ready-made
 table of contents, the text is built out of announcements. Open each paragraph
 with the point itself.
 
-Bad: "Let's break down why reach is falling. Right away: there is one reason."
-Alive: "Reach is falling for one reason: the algorithm throttles posts with links."
+Bad: "Let's break down why reach is falling. Right away: there is one reason. The
+algorithm now shows posts with links less often."
+Alive: "Reach is falling for one reason: the algorithm now shows posts with links
+less often."
 
 ### 4. Buzzword soup
 Drop the empty hype vocabulary: "delve", "tapestry", "realm", "leverage" (as filler),
@@ -183,7 +185,11 @@ make it specific to this story. If not, end on the last fact.
 
 ### 9. Symmetric hedging (no stance)
 "On one hand… on the other hand", "It depends", "There's no one-size-fits-all" - that's
-an AI with no opinion. Take a side and say it. (A plain "first… second…" list is fine.)
+an AI with no opinion. If the text has a stance - the author states it somewhere -
+say it plainly. If it doesn't, don't make one up: drop the empty balancing and keep
+the facts. "The approach has pros and cons: it's fast, but it can stumble on long
+texts" becomes "The approach is fast, but it can stumble on long texts".
+(A plain "first… second…" list is fine.)
 A threshold for hedges: three or more in one sentence is a defect. One or two is
 ordinary human caution - leave it.
 
@@ -213,7 +219,8 @@ about nothing", and restating the obvious, is a classic AI signal. Cut the fille
 - An object cannot act on its own. "The data says", "the market rewards", "the
   study underscores" - whoever actually did something drops out of the sentence.
   Put them back if the text names them: "the company's analysts counted". If it
-  doesn't, just state the fact: "sales grew 12%".
+  doesn't, just state the fact: "the data says sales grew 12%" becomes "sales
+  grew 12%".
 
 ### 14. Don't invent in the gaps
 No data - say so. Don't paper over it with hedged guesses ("likely around…", "exact
@@ -226,7 +233,7 @@ chops sentences to sound deep. If there's a thought behind the fragments, put it
 into a normal sentence. If there isn't, cut them.
 
 ### 16. Asking and answering yourself
-"Why does this matter? Because time is money.", "The result? Twice the growth."
+"Why does this matter? To save time.", "The result? Twice the growth."
 One such question per piece is fine. When paragraphs are built on them, it's a
 machine move. Say it as a statement: "It saves time", "Growth doubled".
 
