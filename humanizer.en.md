@@ -101,14 +101,21 @@ Run through this first. Each item is covered in more detail below.
 | "from freelancers to holdings", "from beginners to pros" | Name who exactly, or cut it |
 | "In conclusion", "To sum up", "I hope this helps" | Cut it, end on the last real point |
 | "Sure! Here's a version:", "Want me to make another one?" | Cut it, hand over the text alone |
-| the em dash "—" | Hyphen, comma, colon, or rebuild the sentence |
+| "reach ≠ sales", "post → reach → leads" | Say it in words, no symbols |
+| the em dash "—" | Hyphen, comma, colon, or rebuild the sentence - not one mark every time |
 
 ## AI tells to remove
 
 ### 1. Punctuation & formatting
 - The em dash "—" is the #1 AI tell. Models reach for it constantly; people typing
   on a keyboard almost never do. Replace it with a normal hyphen "-", a comma, or
-  restructure the sentence.
+  restructure the sentence. Just not with the same mark every time: a colon in
+  every other sentence is the same fingerprint. Mix a full stop, a comma, a
+  rebuilt sentence.
+- Code and math symbols in prose: "→", ">", "<", "=", "≠", "+", "vs", "&". People
+  say it in words: "reach ≠ sales" becomes "reach and sales aren't the same thing",
+  "post → reach → leads" becomes "a post brings reach, and reach brings leads". In tables,
+  formulas and code the symbols stay.
 - No "!!!" - at most a single "!".
 - A one-character ellipsis "…", an en dash "–", non-breaking spaces - that is an
   editor's work, not a person's on a phone. Use three dots and a hyphen. In a
@@ -157,6 +164,13 @@ Drop the empty hype vocabulary: "delve", "tapestry", "realm", "leverage" (as fil
 "unlock the potential", "game-changer", "revolutionary", "seamless", "robust
 solution", "synergy".
 
+Same for slogan formulas: "data is the new oil", "trust is the new currency".
+It reads like a poster quote and says nothing. Cut it. If there is a fact next
+to it, keep the fact.
+
+Bad: "Trust is the new currency. 40% of customers buy again."
+Alive: "40% of customers buy again."
+
 ### 5. Negative parallelism
 The worn-out AI cadence: "It's not just X, it's Y", "Not only… but also…". Say it
 straight: "It's Y".
@@ -173,6 +187,10 @@ easy". If there are really two or four points, write that many.
 ### 7. Hollow authority hedges
 LLMs pretend to "cut through the noise" with throat-clearing: "Essentially", "At its
 core", "The truth is", "What really matters is". Delete them and state the point.
+Same for "insight" lead-ins: "here's what everyone misses", "nobody talks about
+this", "few people know, but". They cast the author as the only one in the know,
+and an ordinary point follows. "Here's what everyone misses: distribution drives
+reach" becomes "Distribution drives reach".
 
 ### 8. Servile or boilerplate endings
 No "I hope this helps!", "In conclusion", "To sum up", "Let me know if you have any
@@ -196,6 +214,10 @@ ordinary human caution - leave it.
 ### 10. "Empty relevance"
 Every paragraph must add a new thought, fact, or specific. Text that's "on topic but
 about nothing", and restating the obvious, is a classic AI signal. Cut the filler.
+Same for a participle tail glued on for weight: "..., highlighting its commitment
+to growth", "..., reflecting wider trends". There is no fact in it - cut it.
+"The company opened an office in Austin, highlighting its commitment to growth"
+becomes "The company opened an office in Austin".
 
 ### 11. Bold like a human
 - Don't bold the first word of every list item - that's a classic AI tell (the model

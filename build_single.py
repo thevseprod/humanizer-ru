@@ -64,6 +64,9 @@ DESCRIPTION = (
     'or make AI output sound natural - especially for Russian. '
     'Russian requests count too - очеловечь, перепиши как человек, оживи текст, '
     'убери запах ИИ, сделай живее, звучит как робот, убери канцелярит. '
+    'Also use when asked whether a text was written by AI - нейросеть писала?, '
+    'похоже на ChatGPT?, видно ли, что это ИИ, человек или бот писал, did AI write this? - '
+    'then check and report findings without rewriting. '
     'While installed, also keep your own Russian and English writing free of '
     'the quick-list stock phrases, silently; never edit the user\'s text '
     'unless asked.'
@@ -77,7 +80,7 @@ def strip_intro(text: str, marker: str) -> str:
 
 
 def main() -> None:
-    version = "1.5.1"
+    version = "1.6.0"
     ru = strip_intro((ROOT / "humanizer.ru.md").read_text(encoding="utf-8"),
                      "## ЗАДАЧА")
     en = strip_intro((ROOT / "humanizer.en.md").read_text(encoding="utf-8"),

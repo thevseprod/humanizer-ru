@@ -1,7 +1,7 @@
 ---
 name: humanizer-ru
-version: 1.5.1
-description: Rewrite text so it reads like a real person wrote it, not an AI. Auto-detects Russian vs English and applies the matching rule set. Use when the user asks to humanize text, remove the "AI smell", de-AI, or make AI output sound natural - especially for Russian. Russian requests count too - очеловечь, перепиши как человек, оживи текст, убери запах ИИ, сделай живее, звучит как робот, убери канцелярит. While installed, also keep your own Russian and English writing free of the quick-list stock phrases, silently; never edit the user's text unless asked.
+version: 1.6.0
+description: Rewrite text so it reads like a real person wrote it, not an AI. Auto-detects Russian vs English and applies the matching rule set. Use when the user asks to humanize text, remove the "AI smell", de-AI, or make AI output sound natural - especially for Russian. Russian requests count too - очеловечь, перепиши как человек, оживи текст, убери запах ИИ, сделай живее, звучит как робот, убери канцелярит. Also use when asked whether a text was written by AI - нейросеть писала?, похоже на ChatGPT?, видно ли, что это ИИ, человек или бот писал, did AI write this? - then check and report findings without rewriting. While installed, also keep your own Russian and English writing free of the quick-list stock phrases, silently; never edit the user's text unless asked.
 license: MIT
 compatibility: any-agent
 allowed-tools:
@@ -65,8 +65,8 @@ allowed-tools:
 («[укажите сумму]», «XX%») скажи автору: заполнить их за него нельзя.
 
 **Как лечить.** Сначала просто удали лишнее. Если фраза без него рассыпается -
-подставь факт из этого же текста. Если факта нет - скажи проще. Синоним лечением
-не считается: «важно отметить» → «стоит подчеркнуть» это тот же штамп в другой
+подставь факт из этого же текста. Если факта нет - скажи проще. Замена синонимом
+ничего не лечит: «важно отметить» → «стоит подчеркнуть» это тот же штамп в другой
 одежде, а «играет ключевую роль» → «имеет большое значение» - тем более.
 
 **Что не трогать.** Призыв к действию, ссылка, срок, цена, контакт,
@@ -128,14 +128,21 @@ allowed-tools:
 | «Сервис является удобным» | Глаголом или прилагательным: «Сервис удобный» |
 | «Подводя итог», «В заключение», «Надеюсь, было полезно» | Убери, закончи последней мыслью |
 | «Конечно! Вот вариант:», «Хочешь, сделаю ещё один?» | Убери, отдай только сам текст |
-| длинное тире «—» | Дефис, запятая, двоеточие или перестрой фразу |
+| «Охват ≠ продажи», «пост → охват → заявки» | Скажи словами, без значков |
+| длинное тире «—» | Дефис, запятая, двоеточие или перестрой фразу, но не одним знаком подряд |
 
 ## Признаки ИИ, которые надо убрать
 
 ### 1. Типографика
 - Длинное тире «—» - это главный маркер ИИ. Нейросети почти всегда ставят именно
   его, живой человек на клавиатуре - почти никогда. Замени на обычный дефис «-»,
-  запятую или перестрой фразу.
+  запятую или перестрой фразу. Только не одним и тем же знаком везде: двоеточие
+  в каждой второй фразе - такой же почерк. Где-то точка, где-то запятая, где-то
+  фраза перестроена.
+- Значки из программирования и формул в обычном тексте: «→», «>», «<», «=»,
+  «≠», «+», «vs», «&». Человек пишет это словами: «Охват ≠ продажи» - «Охват и
+  продажи - не одно и то же», «Пост → охват → заявки» - «Пост даёт охват, а из
+  охвата приходят заявки». В таблицах, формулах и коде знаки остаются.
 - Никаких «!!!» подряд - максимум один «!».
 - Многоточие одним символом «…», короткое тире «–», неразрывные пробелы - это
   работа редактора, а не человека с телефона. Ставь три точки и дефис.
@@ -152,14 +159,18 @@ allowed-tools:
 Плохо: «Важно отметить, что данный инструмент собирает отчёт за 10 минут.»
 Живо: «Инструмент собирает отчёт за 10 минут.»
 
-Сюда же два дефекта, которые видно не по словам, а по грамматике:
+Сюда же три дефекта, которые видно не по словам, а по грамматике:
 
+- **Отглагольное слово вместо глагола.** «Произвести оплату», «осуществить
+  проверку», «принять решение о закупке» - верни глагол: «оплатить», «проверить»,
+  «решить закупить».
 - **Цепочка родительных.** Четыре и больше существительных подряд в родительном
   падеже: «порядок формирования отчётов подразделений компании». Разбей глаголом
   или словом «который».
 - **Калька с английского.** Переведи фразу назад на английский: вышла ходовая
-  идиома, а по-русски так не говорят - переписывай. «На ежедневной основе» (on a
-  daily basis) → «каждый день», «адресовать проблему» → «заняться проблемой».
+  идиома, а русский человек так бы не сказал - переписывай. «На ежедневной
+  основе» (on a daily basis) → «каждый день», «адресовать проблему» → «заняться
+  проблемой».
 
 ### 3. Анонс вместо содержания
 ИИ объявляет, что сейчас скажет, вместо того чтобы просто сказать: «Погнали»,
@@ -173,8 +184,8 @@ allowed-tools:
 Лечится удалением, а не смягчением: выкинь фразу-анонс целиком и начни с самой
 мысли. Заголовок и первая фраза и так скажут, о чём речь.
 
-Анонс бывает и в начале каждого абзаца. Выпиши первые предложения всех абзацев
-подряд: получилось готовое оглавление - текст собран из анонсов, начинай абзацы
+Анонс бывает и в начале каждого абзаца. Прочитай подряд только первые фразы
+абзацев: если вышло готовое оглавление, текст собран из анонсов - начинай абзацы
 с самой мысли.
 
 Плохо: «Разберём, почему падают охваты. Сразу скажу: причина одна. Алгоритм стал
@@ -186,6 +197,13 @@ allowed-tools:
 Слова-пустышки из маркетингового буллшита - под нож: «прорыв», «трансформация»,
 «инсайт», «синергия», «экосистема» (без нужды), «успешный успех», «создавать
 ценность», «масштабировать себя», «раскрыть потенциал».
+
+Сюда же формулы-афоризмы: «данные - новая нефть», «доверие - новая валюта».
+Звучит как цитата для постера, а смысла нет. Убери. Если рядом есть факт,
+оставь факт.
+
+Плохо: «Доверие - новая валюта. Повторно покупают 40% клиентов.»
+Живо: «Повторно покупают 40% клиентов.»
 
 ### 5. Негативный параллелизм
 Заезженная ИИ-риторика: «это не просто X, это Y», «не только…, но и…». Скажи
@@ -203,7 +221,10 @@ allowed-tools:
 ### 7. Псевдо-авторитетные подводки-пустышки
 ИИ делает вид, что «прорезает шум», вводными ни о чём: «по сути», «на самом деле»,
 «что действительно важно», «в основе своей», «как известно». Убери их и скажи мысль
-прямо.
+прямо. Туда же подводки-«инсайты»: «вот чего никто не замечает», «об этом
+молчат», «мало кто знает, но». Они выставляют автора единственным знатоком, а
+дальше идёт обычная мысль. «Вот чего никто не замечает: охват решает
+дистрибуция» - «Охват решает дистрибуция».
 
 ### 8. Подобострастные и дежурные концовки
 Никаких «надеюсь, было полезно», «спасибо за внимание», «подводя итог».
@@ -228,6 +249,10 @@ allowed-tools:
 ### 10. «Пустая уместность»
 Каждый абзац должен добавлять новую мысль, факт или конкретику. Текст «по теме, но
 ни о чём» и пересказ очевидного - типичный признак ИИ. Вырезай воду.
+Сюда же хвост из деепричастия, приклеенный для веса: «…, подчёркивая стремление
+к росту», «…, отражая новые тенденции». Факта в нём нет - отрежь. «Компания
+открыла офис в Казани, подчёркивая стремление к росту» - «Компания открыла офис
+в Казани».
 
 ### 11. Жирный по-человечески
 - Не выделяй жирным первое слово каждого пункта списка - это типичный ИИ-маркер
@@ -446,14 +471,21 @@ Run through this first. Each item is covered in more detail below.
 | "from freelancers to holdings", "from beginners to pros" | Name who exactly, or cut it |
 | "In conclusion", "To sum up", "I hope this helps" | Cut it, end on the last real point |
 | "Sure! Here's a version:", "Want me to make another one?" | Cut it, hand over the text alone |
-| the em dash "—" | Hyphen, comma, colon, or rebuild the sentence |
+| "reach ≠ sales", "post → reach → leads" | Say it in words, no symbols |
+| the em dash "—" | Hyphen, comma, colon, or rebuild the sentence - not one mark every time |
 
 ## AI tells to remove
 
 ### 1. Punctuation & formatting
 - The em dash "—" is the #1 AI tell. Models reach for it constantly; people typing
   on a keyboard almost never do. Replace it with a normal hyphen "-", a comma, or
-  restructure the sentence.
+  restructure the sentence. Just not with the same mark every time: a colon in
+  every other sentence is the same fingerprint. Mix a full stop, a comma, a
+  rebuilt sentence.
+- Code and math symbols in prose: "→", ">", "<", "=", "≠", "+", "vs", "&". People
+  say it in words: "reach ≠ sales" becomes "reach and sales aren't the same thing",
+  "post → reach → leads" becomes "a post brings reach, and reach brings leads". In tables,
+  formulas and code the symbols stay.
 - No "!!!" - at most a single "!".
 - A one-character ellipsis "…", an en dash "–", non-breaking spaces - that is an
   editor's work, not a person's on a phone. Use three dots and a hyphen. In a
@@ -502,6 +534,13 @@ Drop the empty hype vocabulary: "delve", "tapestry", "realm", "leverage" (as fil
 "unlock the potential", "game-changer", "revolutionary", "seamless", "robust
 solution", "synergy".
 
+Same for slogan formulas: "data is the new oil", "trust is the new currency".
+It reads like a poster quote and says nothing. Cut it. If there is a fact next
+to it, keep the fact.
+
+Bad: "Trust is the new currency. 40% of customers buy again."
+Alive: "40% of customers buy again."
+
 ### 5. Negative parallelism
 The worn-out AI cadence: "It's not just X, it's Y", "Not only… but also…". Say it
 straight: "It's Y".
@@ -518,6 +557,10 @@ easy". If there are really two or four points, write that many.
 ### 7. Hollow authority hedges
 LLMs pretend to "cut through the noise" with throat-clearing: "Essentially", "At its
 core", "The truth is", "What really matters is". Delete them and state the point.
+Same for "insight" lead-ins: "here's what everyone misses", "nobody talks about
+this", "few people know, but". They cast the author as the only one in the know,
+and an ordinary point follows. "Here's what everyone misses: distribution drives
+reach" becomes "Distribution drives reach".
 
 ### 8. Servile or boilerplate endings
 No "I hope this helps!", "In conclusion", "To sum up", "Let me know if you have any
@@ -541,6 +584,10 @@ ordinary human caution - leave it.
 ### 10. "Empty relevance"
 Every paragraph must add a new thought, fact, or specific. Text that's "on topic but
 about nothing", and restating the obvious, is a classic AI signal. Cut the filler.
+Same for a participle tail glued on for weight: "..., highlighting its commitment
+to growth", "..., reflecting wider trends". There is no fact in it - cut it.
+"The company opened an office in Austin, highlighting its commitment to growth"
+becomes "The company opened an office in Austin".
 
 ### 11. Bold like a human
 - Don't bold the first word of every list item - that's a classic AI tell (the model
