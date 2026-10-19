@@ -146,7 +146,7 @@ npx skills add thevseprod/humanizer-ru -g
 Пишу и показываю про VSЁ о нейросетях, ИИ-агентах и вайбкодинге – для облегчения
 жизни и заработка:
 
-- 📢 Telegram: [@buyonhigh](https://t.me/buyonhigh)
+- 📢 Telegram: [@klimchenko_ai](https://t.me/klimchenko_ai)
 - 💬 Чат: [@buyonhighchat](https://t.me/buyonhighchat)
 - ▶️ YouTube: [@thevseproduction](https://www.youtube.com/@thevseproduction)
 
@@ -272,7 +272,7 @@ Found an AI tell the rules miss, or have an idea to improve them? Drop it in my 
 I write and show everything about neural nets, AI agents and vibe-coding, to make life
 and earning easier:
 
-- 📢 Telegram: [@buyonhigh](https://t.me/buyonhigh)
+- 📢 Telegram: [@klimchenko_ai](https://t.me/klimchenko_ai)
 - 💬 Chat: [@buyonhighchat](https://t.me/buyonhighchat)
 - ▶️ YouTube: [@thevseproduction](https://www.youtube.com/@thevseproduction)
 
